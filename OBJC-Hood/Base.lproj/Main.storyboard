@@ -3,7 +3,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+        <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-LightItalic</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,11 +25,107 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-QH-vYq">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="ZHV-nn-lGb">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHV-nn-lGb" id="Zax-qN-V7N">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music man needs to go!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-pv-Ooe">
+                                                    <rect key="frame" x="86" y="8" width="466" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="f12-cI-ERT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey this neighbor is such a punk. He blasts his Korn music way tooo loud and im thinking about burning his house down!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0c-xo-PrD">
+                                                    <rect key="frame" x="86" y="32" width="466" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="55n-0x-A1y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="pjG-Mq-19e">
+                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="a3E-WO-OHC"/>
+                                                        <constraint firstAttribute="width" constant="70" id="e80-hS-zbD"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3WB-pv-Ooe" firstAttribute="leading" secondItem="pjG-Mq-19e" secondAttribute="trailing" constant="8" id="0gw-RR-uTa"/>
+                                                <constraint firstItem="3WB-pv-Ooe" firstAttribute="trailing" secondItem="Zax-qN-V7N" secondAttribute="trailingMargin" id="71R-LC-7Gz"/>
+                                                <constraint firstItem="h0c-xo-PrD" firstAttribute="bottom" secondItem="Zax-qN-V7N" secondAttribute="bottomMargin" id="Pdh-Cn-4Ak"/>
+                                                <constraint firstItem="h0c-xo-PrD" firstAttribute="leading" secondItem="pjG-Mq-19e" secondAttribute="trailing" constant="8" id="TJS-l1-FA5"/>
+                                                <constraint firstItem="pjG-Mq-19e" firstAttribute="top" secondItem="Zax-qN-V7N" secondAttribute="top" constant="8" id="dqP-n2-EKJ"/>
+                                                <constraint firstItem="3WB-pv-Ooe" firstAttribute="top" secondItem="Zax-qN-V7N" secondAttribute="topMargin" id="sgQ-2f-FWe"/>
+                                                <constraint firstItem="pjG-Mq-19e" firstAttribute="leading" secondItem="Zax-qN-V7N" secondAttribute="leading" constant="8" id="w3u-ba-hxn"/>
+                                                <constraint firstItem="h0c-xo-PrD" firstAttribute="trailing" secondItem="Zax-qN-V7N" secondAttribute="trailingMargin" id="weT-yL-rFl"/>
+                                                <constraint firstItem="h0c-xo-PrD" firstAttribute="top" secondItem="3WB-pv-Ooe" secondAttribute="bottom" constant="3" id="xT4-WI-Yge"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ct9-k0-SD8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerlogo" translatesAutoresizingMaskIntoConstraints="NO" id="GCo-wu-Whm">
+                                        <rect key="frame" x="222" y="19" width="157" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="j7x-Yb-ucv"/>
+                                            <constraint firstAttribute="width" constant="157" id="jZH-Yc-IOG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xn-Q3-416">
+                                        <rect key="frame" x="551" y="24" width="41" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="41" id="BTL-fW-rdY"/>
+                                            <constraint firstAttribute="height" constant="32" id="irI-LZ-Fm7"/>
+                                        </constraints>
+                                        <state key="normal" image="camera"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.52941176470588236" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0Xn-Q3-416" secondAttribute="bottom" constant="8" id="3ko-gw-B3h"/>
+                                    <constraint firstAttribute="height" constant="64" id="Cfe-pO-fjP"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Xn-Q3-416" secondAttribute="trailing" constant="8" id="GU3-4h-xcA"/>
+                                    <constraint firstItem="GCo-wu-Whm" firstAttribute="centerX" secondItem="ct9-k0-SD8" secondAttribute="centerX" id="Oac-vV-a0e"/>
+                                    <constraint firstAttribute="bottom" secondItem="GCo-wu-Whm" secondAttribute="bottom" constant="8" id="W4S-dy-tPj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3fJ-QH-vYq" secondAttribute="bottom" constant="20" id="3sN-Fi-ZGh"/>
+                            <constraint firstItem="3fJ-QH-vYq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5Fx-ry-NQP"/>
+                            <constraint firstAttribute="trailing" secondItem="3fJ-QH-vYq" secondAttribute="trailing" constant="20" id="6wM-k8-9e2"/>
+                            <constraint firstAttribute="trailing" secondItem="ct9-k0-SD8" secondAttribute="trailing" id="N2y-xN-7uu"/>
+                            <constraint firstItem="ct9-k0-SD8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="anQ-jf-u0K"/>
+                            <constraint firstItem="ct9-k0-SD8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kUy-5t-apo"/>
+                            <constraint firstItem="3fJ-QH-vYq" firstAttribute="top" secondItem="ct9-k0-SD8" secondAttribute="bottom" constant="8" id="vwq-gC-o9V"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="545" y="605"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bannerlogo" width="518" height="194"/>
+        <image name="barrel-water-bridge" width="550" height="440"/>
+        <image name="camera" width="100" height="77"/>
+    </resources>
 </document>
