@@ -13,6 +13,10 @@
 		1E79A67A1C87A542008FDF7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E79A6781C87A542008FDF7F /* Main.storyboard */; };
 		1E79A67C1C87A542008FDF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E79A67B1C87A542008FDF7F /* Assets.xcassets */; };
 		1E79A67F1C87A542008FDF7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E79A67D1C87A542008FDF7F /* LaunchScreen.storyboard */; };
+		1E79A68C1C87A768008FDF7F /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79A68B1C87A768008FDF7F /* DataService.m */; };
+		1E79A68F1C87A7B0008FDF7F /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79A68E1C87A7B0008FDF7F /* Post.m */; };
+		1E79A6951C87A94B008FDF7F /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79A6941C87A94B008FDF7F /* PostCell.m */; };
+		1E79A6981C87A992008FDF7F /* AddPostVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79A6971C87A992008FDF7F /* AddPostVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		1E79A67B1C87A542008FDF7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E79A67E1C87A542008FDF7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E79A6801C87A542008FDF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E79A68A1C87A768008FDF7F /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		1E79A68B1C87A768008FDF7F /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		1E79A68D1C87A7B0008FDF7F /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		1E79A68E1C87A7B0008FDF7F /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		1E79A6931C87A94B008FDF7F /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		1E79A6941C87A94B008FDF7F /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		1E79A6961C87A992008FDF7F /* AddPostVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostVC.h; sourceTree = "<group>"; };
+		1E79A6971C87A992008FDF7F /* AddPostVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPostVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +70,13 @@
 		1E79A66E1C87A542008FDF7F /* OBJC-Hood */ = {
 			isa = PBXGroup;
 			children = (
+				1E79A6861C87A5B7008FDF7F /* Services */,
+				1E79A6871C87A5C5008FDF7F /* Model */,
+				1E79A6881C87A5D0008FDF7F /* View */,
+				1E79A6891C87A5DE008FDF7F /* Controller */,
 				1E79A6721C87A542008FDF7F /* AppDelegate.h */,
 				1E79A6731C87A542008FDF7F /* AppDelegate.m */,
-				1E79A6751C87A542008FDF7F /* ViewController.h */,
-				1E79A6761C87A542008FDF7F /* ViewController.m */,
-				1E79A6781C87A542008FDF7F /* Main.storyboard */,
 				1E79A67B1C87A542008FDF7F /* Assets.xcassets */,
-				1E79A67D1C87A542008FDF7F /* LaunchScreen.storyboard */,
 				1E79A6801C87A542008FDF7F /* Info.plist */,
 				1E79A66F1C87A542008FDF7F /* Supporting Files */,
 			);
@@ -77,6 +89,46 @@
 				1E79A6701C87A542008FDF7F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E79A6861C87A5B7008FDF7F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E79A68A1C87A768008FDF7F /* DataService.h */,
+				1E79A68B1C87A768008FDF7F /* DataService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1E79A6871C87A5C5008FDF7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E79A68D1C87A7B0008FDF7F /* Post.h */,
+				1E79A68E1C87A7B0008FDF7F /* Post.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1E79A6881C87A5D0008FDF7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E79A67D1C87A542008FDF7F /* LaunchScreen.storyboard */,
+				1E79A6781C87A542008FDF7F /* Main.storyboard */,
+				1E79A6931C87A94B008FDF7F /* PostCell.h */,
+				1E79A6941C87A94B008FDF7F /* PostCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1E79A6891C87A5DE008FDF7F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1E79A6751C87A542008FDF7F /* ViewController.h */,
+				1E79A6761C87A542008FDF7F /* ViewController.m */,
+				1E79A6961C87A992008FDF7F /* AddPostVC.h */,
+				1E79A6971C87A992008FDF7F /* AddPostVC.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E79A68F1C87A7B0008FDF7F /* Post.m in Sources */,
 				1E79A6771C87A542008FDF7F /* ViewController.m in Sources */,
 				1E79A6741C87A542008FDF7F /* AppDelegate.m in Sources */,
 				1E79A6711C87A542008FDF7F /* main.m in Sources */,
+				1E79A6981C87A992008FDF7F /* AddPostVC.m in Sources */,
+				1E79A68C1C87A768008FDF7F /* DataService.m in Sources */,
+				1E79A6951C87A94B008FDF7F /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
