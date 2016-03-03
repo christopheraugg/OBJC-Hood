@@ -18,10 +18,10 @@
     _postImg.clipsToBounds = YES;    
 }
 
--(void)configureCell:(NSString *)post {
-    [_titleLbl setText:post];
-    [_descLbl setText:@"Description testing"];
-    [_postImg setImage:[UIImage imageNamed:@"barrel-water-bridge"]];
+-(void)configureCell:(Post *)post {
+    [_titleLbl setText:post.title];
+    [_descLbl setText:post.description];
+    [_postImg setImage:[UIImage imageNamed:post.imagePath]];
 }
 
 @end

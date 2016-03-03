@@ -7,15 +7,14 @@
 //
 
 #import "ViewController.h"
-#import "PostCell.h"
-#import "Post.h"
+//#import "PostCell.h"
+//#import "Post.h"
+//#import "DataService.h"
+
 
 @interface ViewController ()
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
-
-
-@property (nonatomic,strong) NSArray *tempArr;
 
 @end
 
@@ -25,9 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.tempArr = [[NSArray alloc] initWithObjects:@"Red",@"Yellow",@"Green", nil];
+    
+    [DataService loadPosts];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                          selector:@selector(onPostsLoaded:)
+                                          name:@"postsLoaded"
+                                          object:nil];    
+   
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -35,21 +41,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.tempArr count];
+    return [[DataService posts]count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         
-    
+   Post *post = [[DataService posts]objectAtIndex:indexPath.row];
    static NSString *CellIdentifier =@"PostCell";
    PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [cell configureCell:[self.tempArr objectAtIndex:indexPath.row]];
-    
-    
+    [cell configureCell:post];
     
     return cell;
 }
 
+- (void)onPostsLoaded:(NSNotification *)note {
+    [self.tableView reloadData];
+}
 
 @end

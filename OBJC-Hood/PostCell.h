@@ -15,6 +15,6 @@
 @property(nonatomic, weak) IBOutlet UILabel *titleLbl;
 @property(nonatomic, weak) IBOutlet UILabel *descLbl;
 
--(void)configureCell:(NSString *)post;
+-(void)configureCell:(Post *)post;
 
 @end
