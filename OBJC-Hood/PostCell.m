@@ -11,13 +11,17 @@
 @implementation PostCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
+    
+    int frameSize = _postImg.frame.size.width / 2;
+    [[_postImg layer] setCornerRadius:frameSize];
+    _postImg.clipsToBounds = YES;    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)configureCell:(NSString *)post {
+    [_titleLbl setText:post];
+    [_descLbl setText:@"Description testing"];
+    [_postImg setImage:[UIImage imageNamed:@"barrel-water-bridge"]];
 }
 
 @end

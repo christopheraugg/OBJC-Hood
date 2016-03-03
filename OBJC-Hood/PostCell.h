@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 @interface PostCell : UITableViewCell
+
+@property(nonatomic, weak) IBOutlet UIImageView *postImg;
+@property(nonatomic, weak) IBOutlet UILabel *titleLbl;
+@property(nonatomic, weak) IBOutlet UILabel *descLbl;
+
+-(void)configureCell:(NSString *)post;
 
 @end

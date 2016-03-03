@@ -26,11 +26,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-QH-vYq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-QH-vYq">
                                 <rect key="frame" x="20" y="72" width="560" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="ZHV-nn-lGb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="86" id="ZHV-nn-lGb" customClass="PostCell">
                                         <rect key="frame" x="0.0" y="28" width="560" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHV-nn-lGb" id="Zax-qN-V7N">
@@ -55,7 +55,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="pjG-Mq-19e">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="pjG-Mq-19e">
                                                     <rect key="frame" x="8" y="8" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="a3E-WO-OHC"/>
@@ -75,6 +75,11 @@
                                                 <constraint firstItem="h0c-xo-PrD" firstAttribute="top" secondItem="3WB-pv-Ooe" secondAttribute="bottom" constant="3" id="xT4-WI-Yge"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descLbl" destination="h0c-xo-PrD" id="mD0-B4-d9l"/>
+                                            <outlet property="postImg" destination="pjG-Mq-19e" id="k7M-3a-chq"/>
+                                            <outlet property="titleLbl" destination="3WB-pv-Ooe" id="Nhf-pa-v56"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -117,10 +122,13 @@
                             <constraint firstItem="3fJ-QH-vYq" firstAttribute="top" secondItem="ct9-k0-SD8" secondAttribute="bottom" constant="8" id="vwq-gC-o9V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="3fJ-QH-vYq" id="iMf-K0-E5G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="605"/>
+            <point key="canvasLocation" x="551" y="590"/>
         </scene>
     </scenes>
     <resources>

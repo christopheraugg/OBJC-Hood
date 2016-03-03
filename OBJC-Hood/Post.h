@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Post : NSObject <NSCoding>
+@interface Post : NSObject //<NSCoding>
 
 @end
