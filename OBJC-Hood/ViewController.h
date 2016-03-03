@@ -11,7 +11,10 @@
 #import "Post.h"
 #import "DataService.h"
 
-@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
+    
+    DataService *myDataService;
+}
 
 
 

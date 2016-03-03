@@ -13,6 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    myDataService = [DataService sharedInstance];
+    
     int frameSize = _postImg.frame.size.width / 2;
     [[_postImg layer] setCornerRadius:frameSize];
     _postImg.clipsToBounds = YES;    
@@ -20,8 +22,8 @@
 
 -(void)configureCell:(Post *)post {
     [_titleLbl setText:post.title];
-    [_descLbl setText:post.description];
-    [_postImg setImage:[UIImage imageNamed:post.imagePath]];
+    [_descLbl setText:post.postDesc];
+    [_postImg setImage:[myDataService imageForPath:post.imagePath]];
 }
 
 @end

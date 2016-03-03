@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "DataService.h"
 
-@interface PostCell : UITableViewCell
+@interface PostCell : UITableViewCell {
+    
+    DataService *myDataService;
+}
 
 @property(nonatomic, weak) IBOutlet UIImageView *postImg;
 @property(nonatomic, weak) IBOutlet UILabel *titleLbl;

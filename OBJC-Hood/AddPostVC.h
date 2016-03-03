@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataService.h"
+#import "Post.h"
 
-@interface AddPostVC : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddPostVC : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    
+    DataService *myDataService;
+}
 
 @end

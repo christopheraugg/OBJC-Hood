@@ -23,7 +23,8 @@
         
         imagePath = aImagePath;
         title = aTitle;
-        postDesc = aDescription;
+        postDesc = aDescription;        
+        
     }
     
     return self;

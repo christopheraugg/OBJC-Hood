@@ -7,9 +7,6 @@
 //
 
 #import "ViewController.h"
-//#import "PostCell.h"
-//#import "Post.h"
-//#import "DataService.h"
 
 
 @interface ViewController ()
@@ -20,12 +17,13 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    [DataService loadPosts];
+        
+    myDataService = [DataService sharedInstance];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -41,12 +39,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[DataService posts]count];
+    return myDataService.loadedPosts.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         
-   Post *post = [[DataService posts]objectAtIndex:indexPath.row];
+   Post *post = myDataService.loadedPosts[indexPath.row];
    static NSString *CellIdentifier =@"PostCell";
    PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -55,8 +54,13 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 87.0;
+}
+
 - (void)onPostsLoaded:(NSNotification *)note {
-    [self.tableView reloadData];
+    [self.tableView reloadData];    
+    
 }
 
 @end

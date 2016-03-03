@@ -12,16 +12,15 @@
 
 @interface DataService : NSObject
 
-
+@property (nonatomic, strong) NSMutableArray *loadedPosts;
 extern NSString * const KEY_POSTS;
 
-+(NSString *)saveImageAndCreatePath:(UIImage *)image;
-+(void)savePosts;
-+(void)loadPosts;
-+(UIImage *)imageForPath:(NSString *)path;
-+(void)addPost:(Post *)post;
-+(NSString *)documentsPathForFileName:(NSString *)name;
-+(NSArray<Post *> *)posts;
-+ (id)alloc;
++ (id)sharedInstance;
+-(NSString *)saveImageAndCreatePath:(UIImage *)image;
+-(void)savePosts;
+-(void)loadPosts;
+-(UIImage *)imageForPath:(NSString *)path;
+-(void)addPost:(Post *)post;
+-(NSString *)documentsPathForFileName:(NSString *)name;
 
 @end

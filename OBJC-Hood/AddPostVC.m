@@ -10,28 +10,66 @@
 
 @interface AddPostVC ()
 
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (weak, nonatomic) IBOutlet UIImageView *postImg;
+@property (weak, nonatomic) IBOutlet UITextField *descField;
+
 @end
+
 
 @implementation AddPostVC
 
+UIImagePickerController *imagePicker;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    myDataService = [DataService sharedInstance];
+    
+    int frameSize = _postImg.frame.size.width / 2;
+    [[_postImg layer] setCornerRadius:frameSize];
+    _postImg.clipsToBounds = YES;
+    
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)addPicBtnPressed:(id)sender {
+    
+    [sender setTitle:@"" forState:normal];
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)makeBtnPressed:(id)sender {
+    
+    NSString *title = _titleField.text;
+    NSString *desc = _descField.text;
+    UIImage *img = _postImg.image;
+    
+    if (title) {
+        
+        if (img) {
+                        
+            NSString *imgPath = [myDataService saveImageAndCreatePath:img];
+            Post *post = [[Post alloc]initWithImagePath:imgPath title:title description:desc];
+            [myDataService addPost:post];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+    }
 }
-*/
+
+- (IBAction)cancelBtnPressed:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [imagePicker dismissViewControllerAnimated:YES completion:nil];
+    _postImg.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+}
 
 @end
